@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HijauTabung - Analisis Keuangan</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/analisis.css">
+    <link rel="stylesheet" href="css/fade-in.css">
+</head>
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="nav-container fade-in-element">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+                <span>HijauTabung</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html">Dashboard</a>
+                <a href="input.html">Input</a>
+                <a href="detail.html">Transaksi</a>
+                <a href="analisis.html" class="active">Analisis</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ================= MAIN ================= -->
+    <main class="analysis-page">
+        <!-- ================= PAGE HEADER ================= -->
+        <section class="page-header fade-in-element">
+            <div class="page-header-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div>
+                <p class="page-label">AI FINANCIAL ASSISTANT</p>
+                <h1>Analisis Keuangan</h1>
+                <p>
+                    Pahami kondisi keuanganmu dan diskusikan
+                    pengelolaan keuangan berdasarkan transaksi yang telah kamu catat.
+                </p>
+            </div>
+        </section>
+        <!-- ================= FINANCIAL SUMMARY ================= -->
+        <section class="financial-summary fade-in-element">
+            <div class="summary-header">
+                <div>
+                    <h2>Ringkasan Keuangan</h2>
+                    <p>Data yang tersedia untuk membantu analisis.</p>
+                </div>
+                <i class="fa-solid fa-chart-simple"></i>
+            </div>
+            <div class="summary-grid">
+                <!-- SALDO -->
+                <div class="summary-item">
+                    <span class="summary-label">Saldo</span>
+                    <strong id="saldo">Rp0</strong>
+                </div>
+                <!-- PEMASUKAN -->
+                <div class="summary-item">
+                    <span class="summary-label">Pemasukan</span>
+                    <strong id="total-pemasukan" class="income-text">Rp0</strong>
+                </div>
+                <!-- PENGELUARAN -->
+                <div class="summary-item">
+                    <span class="summary-label">Pengeluaran</span>
+                    <strong id="total-pengeluaran" class="expense-text">Rp0</strong>
+                </div>
+                <!-- TRANSAKSI -->
+                <div class="summary-item">
+                    <span class="summary-label">Transaksi</span>
+                    <strong id="jumlah-transaksi">0</strong>
+                </div>
+            </div>
+        </section>
+        <!-- ================= AI CHAT ================= -->
+        <section class="chat-card fade-in-element">
+            <!-- CHAT HEADER -->
+            <div class="chat-header">
+                <div class="chat-icon">
+                    <i class="fa-regular fa-comments"></i>
+                </div>
+                <div>
+                    <span>FINANCIAL ASSISTANT</span>
+                    <h2>Diskusikan keuanganmu</h2>
+                    <p>
+                        Mulai dengan analisis keuangan 30 hari terakhir,
+                        kemudian lanjutkan dengan pertanyaan lainnya.
+                    </p>
+                </div>
+            </div>
+            <!-- CHAT AREA -->
+            <div id="chat-container" class="chat-container">
+                <!-- PESAN PEMBUKA AI -->
+                <div class="ai-message">
+                    <div class="message-avatar">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div class="message-content">
+                        <span class="message-name">HijauTabung AI</span>
+                        <p>
+                            Untuk memulai percakapan, lakukan
+                            analisis keuangan 30 hari terakhir terlebih dahulu.
+                            Setelah itu kamu dapat bertanya lebih lanjut
+                            mengenai kondisi keuanganmu.
+                        </p>
+                    </div>
+                </div>
+                <!-- PROMPT WAJIB -->
+                <div class="start-analysis">
+                    <span class="suggestion-label">Langkah pertama</span>
+                    <button type="button" id="btn-mulai-analisis" class="start-analysis-button">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Analisis keuangan 30 hari terakhir
+                    </button>
+                </div>
+            </div>
+            <!-- CHAT INPUT -->
+            <form id="chat-form" class="chat-form">
+                <input type="text" id="chat-input" placeholder="Selesaikan analisis awal terlebih dahulu..."
+                    autocomplete="off" disabled>
+                <button type="submit" id="chat-send" aria-label="Kirim" disabled>
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </form>
+            <p class="chat-note">
+                AI memberikan saran berdasarkan data transaksi yang tersedia.
+            </p>
+        </section>
+    </main>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer fade-in-element">
+        <div class="footer-main">
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>HijauTabung</span>
+                </div>
+                <p>
+                    Catat pengeluaran, pahami kebiasaan,
+                    dan kelola keuangan dengan lebih sadar.
+                </p>
+            </div>
+            <!-- NAVIGASI -->
+            <div class="footer-column">
+                <h3>Navigasi</h3>
+                <a href="index.html">Beranda</a>
+                <a href="input.html">Catat Transaksi</a>
+                <a href="detail.html">Riwayat</a>
+                <a href="analisis.html">Analisis AI</a>
+            </div>
+            <!-- FITUR -->
+            <div class="footer-column">
+                <h3>Fitur</h3>
+                <a href="input.html">Pencatatan Keuangan</a>
+                <a href="detail.html">Riwayat Transaksi</a>
+                <a href="analisis.html">Analisis Keuangan</a>
+                <a href="analisis.html">HijauTabung AI</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 HijauTabung</span>
+            <span>Kelola hari ini, tumbuh untuk nanti.</span>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/fade-in.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/analisis.js"></script>
+</body>
+
+</html>

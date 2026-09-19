@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HijauTabung</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/fade-in.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container fade-in-element">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </span>
+                <span>HijauTabung</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="active">Dashboard</a>
+                <a href="input.html">Input</a>
+                <a href="detail.html">Transaksi</a>
+                <a href="analisis.html">Analisis</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content fade-in-element">
+            <span class="hero-label">
+                HIJAUTABUNG
+            </span>
+            <h1>
+                Kelola uangmu hari ini,
+                <span>bangun masa depanmu nanti.</span>
+            </h1>
+            <p>
+                Catat pengeluaran, pahami kebiasaan,
+                dan buat keputusan keuangan dengan lebih sadar.
+            </p>
+            <a href="#ringkasan" class="hero-button">
+                Lihat ringkasan
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+        </div>
+    </section>
+    <main>
+        <!-- RINGKASAN -->
+        <section class="section fade-in-element" id="ringkasan">
+            <div class="section-heading">
+                <div>
+                    <span class="setion-clabel">RINGKASAN</span>
+                    <h2>Kondisi keuanganmu</h2>
+                </div>
+            </div>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <span class="summary-title">Saldo</span>
+                    <strong id="saldo"></strong>
+                    <i class="fa-solid fa-wallet summary-icon"></i>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-title">Total Pemasukan</span>
+                    <strong id="total-pemasukan"></strong>
+                    <i class="fa-solid fa-arrow-trend-up summary-icon"></i>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-title">Total Pengeluaran</span>
+                    <strong id="total-pengeluaran"></strong>
+                    <i class="fa-solid fa-arrow-trend-down summary-icon"></i>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-title">Jumlah Transaksi</span>
+                    <strong id="jumlah-transaksi"></strong>
+                    <i class="fa-solid fa-receipt summary-icon"></i>
+                </div>
+            </div>
+        </section>
+        <!-- TRANSAKSI TERBARU -->
+        <section class="section fade-in-element">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">AKTIVITAS</span>
+                    <h2>Transaksi terbaru</h2>
+                </div>
+                <a href="detail.html" class="section-link">
+                    Lihat semua
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="content-card">
+                <div id="activity-list" class="transaction-list">
+                </div>
+            </div>
+        </section>
+        <!-- AI -->
+        <section class="section fade-in-element">
+            <div class="ai-card">
+                <div class="ai-card-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div class="ai-card-content">
+                    <span class="section-label">HIJAUTABUNG AI</span>
+                    <h2>Pahami keuanganmu lebih dalam.</h2>
+                    <p>
+                        Gunakan AI untuk melihat pola pengeluaran
+                        dan mendapatkan insight berdasarkan transaksi kamu.
+                    </p>
+                </div>
+                <a href="analisis.html" class="ai-button">
+                    Mulai analisis
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-main fade-in-element">
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>HijauTabung</span>
+                </div>
+                <p>
+                    Catat pengeluaran, pahami kebiasaan,
+                    dan kelola keuangan dengan lebih sadar.
+                </p>
+            </div>
+            <!-- NAVIGASI -->
+            <div class="footer-column">
+                <h3>Navigasi</h3>
+                <a href="index.html">Beranda</a>
+                <a href="input.html">Catat Transaksi</a>
+                <a href="detail.html">Riwayat</a>
+                <a href="analisis.html">Analisis AI</a>
+            </div>
+            <!-- FITUR -->
+            <div class="footer-column">
+                <h3>Fitur</h3>
+                <a href="input.html">Pencatatan Keuangan</a>
+                <a href="detail.html">Riwayat Transaksi</a>
+                <a href="analisis.html">Analisis Keuangan</a>
+                <a href="analisis.html">HijauTabung AI</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 HijauTabung</span>
+            <span>Kelola hari ini, tumbuh untuk nanti.</span>
+        </div>
+    </footer>
+
+    <script src="js/fade-in.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

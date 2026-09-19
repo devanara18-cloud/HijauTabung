@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HijauTabung - Transaksi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/fade-in.css">
+</head>
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="nav-container fade-in-element">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </span>
+                <span>HijauTabung</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html">Dashboard</a>
+                <a href="input.html">Input</a>
+                <a href="detail.html" class="active">Transaksi</a>
+                <a href="analisis.html">Analisis</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ================= MAIN ================= -->
+    <main class="transaction-page">
+        <!-- ================= PAGE HEADER ================= -->
+        <section class="page-header fade-in-element">
+            <div class="page-header-content">
+                <p class="page-label">FINANCIAL ACTIVITY</p>
+                <h1>Transaksi</h1>
+                <p>
+                    Lihat dan kelola seluruh aktivitas
+                    keuangan yang telah kamu catat.
+                </p>
+            </div>
+            <a href="input.html" class="add-button">
+                <i class="fa-solid fa-plus"></i>
+                Tambah Transaksi
+            </a>
+        </section>
+        <!-- ================= SUMMARY ================= -->
+        <section class="transaction-summary fade-in-element">
+            <!-- TOTAL TRANSAKSI -->
+            <div class="summary-item">
+                <div class="summary-icon transaction">
+                    <i class="fa-solid fa-receipt"></i>
+                </div>
+                <div>
+                    <span>Total Transaksi</span>
+                    <strong id="jumlah-transaksi">0</strong>
+                </div>
+            </div>
+            <!-- PEMASUKAN -->
+            <div class="summary-item">
+                <div class="summary-icon income">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </div>
+                <div>
+                    <span>Total Pemasukan</span>
+                    <strong id="total-pemasukan" class="income-text">Rp0</strong>
+                </div>
+            </div>
+            <!-- PENGELUARAN -->
+            <div class="summary-item">
+                <div class="summary-icon expense">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </div>
+                <div>
+                    <span>Total Pengeluaran</span>
+                    <strong id="total-pengeluaran" class="expense-text">Rp0</strong>
+                </div>
+            </div>
+        </section>
+        <!-- ================= TRANSACTIONS ================= -->
+        <section class="transactions-container fade-in-element">
+            <!-- HEADER -->
+            <div class="transactions-header">
+                <div>
+                    <h2>Semua Transaksi</h2>
+                    <p id="transaction-count">0 transaksi tercatat</p>
+                </div>
+                <!-- FILTER AREA -->
+                <div class="filter-area">
+                    <!-- SEARCH -->
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search-input" placeholder="Cari transaksi...">
+                    </div>
+                    <!-- JENIS -->
+                    <div class="filter-wrapper">
+                        <select id="filter-jenis">
+                            <option value="Semua">Semua</option>
+                            <option value="Pemasukan">Pemasukan</option>
+                            <option value="Pengeluaran">Pengeluaran</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <!-- KATEGORI -->
+                    <div class="filter-wrapper category-filter">
+                        <select id="filter-kategori">
+                            <option value="Semua">Semua Kategori</option>
+                            <option value="Makanan">Makanan</option>
+                            <option value="Transportasi">Transportasi</option>
+                            <option value="Belanja">Belanja</option>
+                            <option value="Pendidikan">Pendidikan</option>
+                            <option value="Hiburan">Hiburan</option>
+                            <option value="Tagihan">Tagihan</option>
+                            <option value="Kesehatan">Kesehatan</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- ================= TRANSACTION LIST ================= -->
+            <div class="transaction-list" id="transaction-list">
+                <!--
+                    Semua transaksi akan dibuat
+                    menggunakan JavaScript.
+                -->
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <h3>Belum ada transaksi</h3>
+                    <p>
+                        Transaksi yang kamu tambahkan
+                        akan muncul di sini.
+                    </p>
+                    <a href="input.html">Tambah Transaksi</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer fade-in-element">
+        <div class="footer-main">
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>HijauTabung</span>
+                </div>
+                <p>
+                    Catat pengeluaran, pahami kebiasaan,
+                    dan kelola keuangan dengan lebih sadar.
+                </p>
+            </div>
+            <!-- NAVIGASI -->
+            <div class="footer-column">
+                <h3>Navigasi</h3>
+                <a href="index.html">Beranda</a>
+                <a href="input.html">Catat Transaksi</a>
+                <a href="detail.html">Riwayat</a>
+                <a href="analisis.html">Analisis AI</a>
+            </div>
+            <!-- FITUR -->
+            <div class="footer-column">
+                <h3>Fitur</h3>
+                <a href="input.html">Pencatatan Keuangan</a>
+                <a href="detail.html">Riwayat Transaksi</a>
+                <a href="analisis.html">Analisis Keuangan</a>
+                <a href="analisis.html">HijauTabung AI</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 HijauTabung</span>
+            <span>Kelola hari ini, tumbuh untuk nanti.</span>
+        </div>
+    </footer>
+    <!-- ================= POPUP DETAIL TRANSAKSI ================= -->
+    <div class="popup" id="detail-popup">
+        <div class="popup-overlay"></div>
+        <div class="popup-box">
+            <!-- TOMBOL CLOSE -->
+            <button type="button" class="popup-close" id="detail-close" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <!-- HEADER -->
+            <div class="popup-header">
+                <div class="popup-icon" id="detail-icon">
+                    <i class="fa-solid fa-receipt"></i>
+                </div>
+                <div>
+                    <p class="popup-label">DETAIL TRANSAKSI</p>
+                    <h2 id="detail-judul">Makan siang</h2>
+                </div>
+            </div>
+            <!-- DETAIL -->
+            <div class="popup-detail-list">
+                <div class="popup-detail-item">
+                    <span>Kategori</span>
+                    <strong id="detail-kategori">Makanan</strong>
+                </div>
+                <div class="popup-detail-item">
+                    <span>Jenis</span>
+                    <strong id="detail-jenis">Pengeluaran</strong>
+                </div>
+                <div class="popup-detail-item">
+                    <span>Tanggal</span>
+                    <strong id="detail-tanggal">05 September 2026</strong>
+                </div>
+                <div class="popup-detail-item">
+                    <span>Nominal</span>
+                    <strong id="detail-nominal">- Rp35.000</strong>
+                </div>
+            </div>
+            <!-- KETERANGAN -->
+            <div class="popup-description">
+                <span>Keterangan</span>
+                <p id="detail-keterangan">
+                    Makan siang bersama teman.
+                </p>
+            </div>
+            <!-- ACTION -->
+            <div class="popup-actions">
+                <button type="button" class="popup-button edit-button" id="btn-edit">
+                    <i class="fa-solid fa-pen"></i>
+                    Edit
+                </button>
+                <button type="button" class="popup-button delete-button" id="btn-delete">
+                    <i class="fa-solid fa-trash"></i>
+                    Hapus
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ================= POPUP EDIT TRANSAKSI ================= -->
+    <div class="popup" id="edit-popup">
+        <div class="popup-overlay"></div>
+        <div class="popup-box">
+            <!-- TOMBOL CLOSE -->
+            <button type="button" class="popup-close" id="edit-close" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <!-- HEADER -->
+            <div class="popup-header">
+                <div class="popup-icon edit-icon">
+                    <i class="fa-solid fa-pen"></i>
+                </div>
+                <div>
+                    <p class="popup-label">EDIT TRANSAKSI</p>
+                    <h2>Ubah Transaksi</h2>
+                </div>
+            </div>
+            <!-- FORM EDIT -->
+            <form id="edit-form">
+                <!-- JENIS -->
+                <div class="edit-field">
+                    <label>Jenis Transaksi</label>
+                    <div class="edit-type-options">
+                        <label class="edit-type-option">
+                            <input type="radio" name="edit-jenis" value="Pemasukan">
+                            <span>Pemasukan</span>
+                        </label>
+                        <label class="edit-type-option">
+                            <input type="radio" name="edit-jenis" value="Pengeluaran">
+                            <span>Pengeluaran</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- NOMINAL -->
+                <div class="edit-field">
+                    <label for="edit-nominal">Nominal</label>
+                    <div class="edit-input-wrapper">
+                        <span>Rp</span>
+                        <input type="text" id="edit-nominal" inputmode="numeric" placeholder="0" required>
+                    </div>
+                </div>
+                <!-- KATEGORI -->
+                <div class="edit-field">
+                    <label for="edit-kategori">Kategori</label>
+                    <select id="edit-kategori" required>
+                        <option value="">Pilih kategori</option>
+                        <option value="Makanan">Makanan</option>
+                        <option value="Transportasi">Transportasi</option>
+                        <option value="Belanja">Belanja</option>
+                        <option value="Pendidikan">Pendidikan</option>
+                        <option value="Hiburan">Hiburan</option>
+                        <option value="Tagihan">Tagihan</option>
+                        <option value="Kesehatan">Kesehatan</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+                <!-- TANGGAL -->
+                <div class="edit-field">
+                    <label for="edit-tanggal">Tanggal</label>
+                    <input type="date" id="edit-tanggal" required>
+                </div>
+                <!-- KETERANGAN -->
+                <div class="edit-field">
+                    <label for="edit-keterangan">Keterangan</label>
+                    <input type="text" id="edit-keterangan" placeholder="Contoh: Makan siang">
+                </div>
+                <!-- ACTION -->
+                <div class="popup-actions edit-actions">
+                    <button type="button" class="popup-button cancel-button" id="edit-cancel">
+                        Batal
+                    </button>
+                    <button type="submit" class="popup-button save-button">
+                        <i class="fa-solid fa-check"></i>
+                        Simpan Perubahan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/fade-in.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/detail.js"></script>
+</body>
+
+</html>

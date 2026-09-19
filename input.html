@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HijauTabung - Tambah Transaksi</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/fade-in.css">
+</head>
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="nav-container fade-in-element">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+                <span>HijauTabung</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html">Dashboard</a>
+                <a href="input.html" class="active">Input</a>
+                <a href="detail.html">Transaksi</a>
+                <a href="analisis.html">Analisis</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ================= MAIN ================= -->
+    <main class="input-page">
+        <!-- ================= HEADER ================= -->
+        <section class="page-header fade-in-element">
+            <div class="page-header-icon">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div>
+                <p class="page-label">TRANSAKSI</p>
+                <h1>Tambah Transaksi</h1>
+                <p>
+                    Catat pemasukan atau pengeluaranmu
+                    agar kondisi keuanganmu tetap terpantau.
+                </p>
+            </div>
+        </section>
+        <!-- ================= FORM ================= -->
+        <section class="form-container fade-in-element">
+            <form id="form-transaksi">
+                <!-- ===== JENIS TRANSAKSI ===== -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <span class="section-number">01</span>
+                        <div>
+                            <h2>Jenis Transaksi</h2>
+                            <p>Pilih jenis transaksi yang ingin dicatat.</p>
+                        </div>
+                    </div>
+                    <div class="transaction-type">
+                        <!-- PEMASUKAN -->
+                        <label class="type-option">
+                            <input type="radio" name="jenis" value="Pemasukan" checked>
+                            <div class="type-content">
+                                <div class="type-icon income">
+                                    <i class="fa-solid fa-arrow-down"></i>
+                                </div>
+                                <div>
+                                    <h3>Pemasukan</h3>
+                                    <p>Uang yang masuk</p>
+                                </div>
+                            </div>
+                            <div class="radio-circle"></div>
+                        </label>
+                        <!-- PENGELUARAN -->
+                        <label class="type-option">
+                            <input type="radio" name="jenis" value="Pengeluaran">
+                            <div class="type-content">
+                                <div class="type-icon expense">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </div>
+                                <div>
+                                    <h3>Pengeluaran</h3>
+                                    <p>Uang yang keluar</p>
+                                </div>
+                            </div>
+                            <div class="radio-circle"></div>
+                        </label>
+                    </div>
+                </div>
+                <!-- ===== NOMINAL ===== -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <span class="section-number">02</span>
+                        <div>
+                            <h2>Nominal</h2>
+                            <p>Masukkan jumlah uang transaksi.</p>
+                        </div>
+                    </div>
+                    <div class="input-group nominal-input">
+                        <span>Rp</span>
+                        <input type="text" id="nominal" name="nominal" placeholder="0" min="0" required>
+                    </div>
+                </div>
+                <!-- ===== DETAIL TRANSAKSI ===== -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <span class="section-number">03</span>
+                        <div>
+                            <h2>Detail Transaksi</h2>
+                            <p>Tambahkan informasi mengenai transaksi.</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <!-- KATEGORI -->
+                        <div class="form-field">
+                            <label for="kategori">Kategori</label>
+                            <div class="select-wrapper">
+                                <select id="kategori" name="kategori" required>
+                                    <option value="" disabled selected>Pilih kategori</option>
+                                    <option value="Makanan">Makanan</option>
+                                    <option value="Transportasi">Transportasi</option>
+                                    <option value="Belanja">Belanja</option>
+                                    <option value="Pendidikan">Pendidikan</option>
+                                    <option value="Hiburan">Hiburan</option>
+                                    <option value="Tagihan">Tagihan</option>
+                                    <option value="Kesehatan">Kesehatan</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <!-- TANGGAL -->
+                        <div class="form-field">
+                            <label for="tanggal">Tanggal</label>
+                            <div class="input-with-icon">
+                                <input type="date" id="tanggal" name="tanggal" required>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KETERANGAN -->
+                    <div class="form-field">
+                        <label for="keterangan">
+                            Keterangan
+                            <span>(Opsional)</span>
+                        </label>
+                        <input type="text" id="keterangan" name="keterangan"
+                            placeholder="Contoh: Makan siang bersama teman">
+                    </div>
+                </div>
+                <!-- ===== ACTION ===== -->
+                <div class="form-actions">
+                    <a href="index.html" class="cancel-button">Batal</a>
+                    <button type="submit" class="save-button">
+                        <i class="fa-solid fa-check"></i>
+                        Simpan Transaksi
+                    </button>
+                </div>
+            </form>
+        </section>
+        <!-- ================= TIPS ================= -->
+        <section class="tips-card fade-in-element">
+            <div class="tips-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div>
+                <h2>Tips mencatat keuangan</h2>
+                <p>
+                    Catat transaksi secara rutin dan gunakan kategori
+                    yang sesuai agar analisis keuanganmu menjadi lebih akurat.
+                </p>
+            </div>
+        </section>
+    </main>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-main fade-in-element">
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>HijauTabung</span>
+                </div>
+                <p>
+                    Catat pengeluaran, pahami kebiasaan,
+                    dan kelola keuangan dengan lebih sadar.
+                </p>
+            </div>
+            <!-- NAVIGASI -->
+            <div class="footer-column">
+                <h3>Navigasi</h3>
+                <a href="index.html">Beranda</a>
+                <a href="input.html">Catat Transaksi</a>
+                <a href="detail.html">Riwayat</a>
+                <a href="analisis.html">Analisis AI</a>
+            </div>
+            <!-- FITUR -->
+            <div class="footer-column">
+                <h3>Fitur</h3>
+                <a href="input.html">Pencatatan Keuangan</a>
+                <a href="detail.html">Riwayat Transaksi</a>
+                <a href="analisis.html">Analisis Keuangan</a>
+                <a href="analisis.html">HijauTabung AI</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 HijauTabung</span>
+            <span>Kelola hari ini, tumbuh untuk nanti.</span>
+        </div>
+    </footer>
+    <!-- ================= POPUP ================= -->
+    <div id="popup" class="popup">
+        <div class="popup-overlay"></div>
+        <div class="popup-box">
+            <div class="popup-icon" id="popup-icon">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+            <div class="popup-content">
+                <h2 id="popup-title">Data Belum Lengkap</h2>
+                <p id="popup-message">Silakan lengkapi semua data sebelum menyimpan transaksi.</p>
+            </div>
+            <button type="button" id="popup-close" class="popup-close">
+                Mengerti
+            </button>
+        </div>
+    </div>
+
+    <script src="js/fade-in.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/input.js"></script>
+</body>
+
+</html>
