@@ -74,7 +74,7 @@ tombolMulaiAnalisis.addEventListener("click", async () => {
     chatInput.placeholder = "AI sedang menganalisis...";
 
     try {
-        const response = await fetch("http://localhost:3000/analisis",
+        const response = await fetch("https://hijautabung-api.onrender.com/analisis",
             {
                 method: "POST",
                 headers: {
